@@ -13,4 +13,4 @@ class ArticleAdmin(admin.ModelAdmin):
     inlines = [RelationshipInline]
 @admin.register(Scope)
 class ScopeAdmin(admin.ModelAdmin):
-    list_display = ['articlescope']
+    list_display = ['topic']

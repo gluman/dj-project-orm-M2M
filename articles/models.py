@@ -15,14 +15,14 @@ class Article(models.Model):
         return self.title
 
 class Scope(models.Model):
-    articlescope = models.CharField(max_length=256, verbose_name='Раздел')
+    topic = models.CharField(max_length=256, verbose_name='Раздел')
     class Meta:
         verbose_name = 'Раздел'
         verbose_name_plural = 'Разделы'
 
     def __str__(self):
-        return self.articlescope
+        return self.topic
 class Relations(models.Model):
     scope = models.ForeignKey('Scope', on_delete=models.CASCADE, verbose_name='Раздел')
     article = models.ForeignKey('Article', on_delete=models.CASCADE, verbose_name='Статья')
-    ismain = models.BooleanField(verbose_name='Основная')
+    is_main = models.BooleanField(verbose_name='Основная')
