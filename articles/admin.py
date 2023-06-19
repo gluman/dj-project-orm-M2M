@@ -8,9 +8,9 @@ class RelationshipInline(admin.TabularInline):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'text', 'published_at', 'image' ]
-    inlines = (RelationshipInline,)
+    list_display = ['id', 'title', 'text', 'published_at', 'image']
+    list_display_links = ['title']
+    inlines = [RelationshipInline]
 @admin.register(Scope)
 class ScopeAdmin(admin.ModelAdmin):
     list_display = ['articlescope']
-    inlines = (RelationshipInline,)
